@@ -6,7 +6,7 @@ export default {
   target: 'static',
 
   router: {
-    base: '/lu-web-design/'
+    base: '/dist/lu-web-design/'
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
