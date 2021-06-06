@@ -6,7 +6,7 @@ export default {
   target: 'static',
 
   router: {
-    base: '/dist/lu-web-design/'
+    base: '/lu/'
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -21,12 +21,22 @@ export default {
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap'
+      },
     ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '@/assets/css/bootstrap.min.css',
+    '@/assets/css/style.scss'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -42,8 +52,27 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    'bootstrap-vue/nuxt',
+    'nuxt-i18n',
   ],
-
+  i18n: {
+    locales: [
+      {
+        name: 'Latvian',
+        code: 'lv',
+        iso: 'lv-LV',
+        file: 'lv-LV.js'
+      },
+      {
+        name: 'English',
+        code: 'en',
+        iso: 'en-US',
+        file: 'en-US.js'
+      },
+    ],
+    defaultLocale: 'lv',
+    langDir: 'lang/',
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }
